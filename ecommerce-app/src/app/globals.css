@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primaryDark: #2c3e50;
+  --primaryLight: #eff1f3;
+
+  --backgroundDark: #34495e;
+  --backgroundLight: #ecf0f1;
+
+  --borderColor: #eaecee;
+
+  --black: #000000;
+  --white: #ffffff;
+
+  --grey40: #bdc3c7;
+  --grey70: #808b96;
+  --grey90: #34495e;
+
+  --success: #2ecc71;
+  --warning: #f39c12;
+  --error: #e74c3c;
+}
+
+
