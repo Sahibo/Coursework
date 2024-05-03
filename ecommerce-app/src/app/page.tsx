@@ -1,4 +1,5 @@
 "use client";
+import Grid from "@/components/grid";
 import {
   PrimaryButton,
   SecondaryButton,
@@ -13,6 +14,7 @@ export default function Home() {
       <h1>Welcome to Next.js</h1>
       <PrimaryButton onClick={handleClick}>Primary Button</PrimaryButton>
       <SecondaryButton onClick={handleClick}>Outlined Button</SecondaryButton>
+      <Grid></Grid>
     </main>
   );
 }

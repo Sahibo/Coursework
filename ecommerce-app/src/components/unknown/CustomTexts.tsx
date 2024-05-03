@@ -1,15 +1,12 @@
 import styled from "styled-components";
 import { Colors } from "./Colors";
-import { nunito } from "@/fonts/fonts";
+import { ColorProps } from "../../types/ComponentsTypes";
+// import { nunito } from "@/fonts/fonts";
 
-interface Props {
-  color?: string;
-}
-
-export const BaseText = styled.p<Props>`
+export const BaseText = styled.p<ColorProps>`
   color: ${(props) => (props.color ? props.color : Colors.black)};
   font-weight: 400;
-  font-family: ${nunito}, sans-serif;
+  /* font-family: nunito, sans-serif; */
 `;
 
 export const TextXSmall = styled(BaseText)`

@@ -1,0 +1,18 @@
+.mainContainer,
+.leftContainer,
+.rightContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+}
+
+.mainContainer {
+  justify-content: space-between;
+}
+
+.leftContainer {
+}
+
+.rightContainer {
+}

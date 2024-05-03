@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { Colors } from "./Colors";
-import { CustomButtonProps } from "../../types/ButtonTypes";
+import { WidthProps } from "../../types/ComponentsTypes";
 
-export const BaseButton = styled.button<CustomButtonProps>`
+export const BaseButton = styled.button<WidthProps>`
   cursor: pointer;
   height: 50px;
   width: ${(props) => (props.width ? props.width + "px" : "100%")};

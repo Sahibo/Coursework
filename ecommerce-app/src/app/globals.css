@@ -15,6 +15,19 @@ ul,
 ol {
   margin: 0;
   padding: 0;
+  cursor: default;
+}
+
+html::-webkit-scrollbar {
+  width: 9px;
+}
+
+html::-webkit-scrollbar-track {
+  background: var(--grey40);
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--grey80);
 }
 
 :root {
@@ -29,8 +42,12 @@ ol {
   --black: #000000;
   --white: #ffffff;
 
+  --grey30: #d8dbdc;
   --grey40: #bdc3c7;
+  --grey50: #a1aab3;
+  --grey60: #86949e;
   --grey70: #808b96;
+  --grey80: #6c7a86;
   --grey90: #34495e;
 
   --success: #2ecc71;
@@ -38,4 +55,7 @@ ol {
   --error: #e74c3c;
 }
 
-
+nav,
+footer {
+  padding: 20px 40px;
+}

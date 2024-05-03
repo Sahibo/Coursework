@@ -1,0 +1,33 @@
+.mainContainer {
+  border: 1px solid var(--borderColor);
+}
+
+.imageContainer {
+  cursor: pointer;
+}
+
+.bottomContainer {
+  height: 100px;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 6px 12px;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-around;
+}
+
+.infoContainer h1 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-wrap: wrap;
+}
+
+.iconContainer {
+  align-self: center;
+  cursor: pointer;
+}
