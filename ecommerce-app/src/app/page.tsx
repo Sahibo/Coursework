@@ -11,7 +11,6 @@ export default function Home() {
   };
   return (
     <main>
-      <h1>Welcome to Next.js</h1>
       <PrimaryButton onClick={handleClick}>Primary Button</PrimaryButton>
       <SecondaryButton onClick={handleClick}>Outlined Button</SecondaryButton>
       <Grid></Grid>

@@ -1,5 +1,9 @@
 import React, { ReactNode } from "react";
 
+export interface ChildrenProps {
+  children: ReactNode;
+}
+
 export interface WidthProps {
   width?: number;
 }
