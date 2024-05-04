@@ -7,22 +7,23 @@ export type Product =
     make: string,
     fabric: string,
     description: string,
-    productVariations: ProductVariation
+    productVariations: ProductVariation[]
 
 }
 
 export type ProductVariation = {
     id: number,
     name: string,
-    color: Color
-    productImages: ProductImage,
-    subProductVariations: SubProductVariation
+    color: Color,
+    product: Product
+    productImages: ProductImage[],
+    subProductVariations: SubProductVariation[]
 }
 
 export type ProductImage = 
 {
     id: number, 
-    imageData: any,
+    imageData: string,
     
 }
 
@@ -34,4 +35,5 @@ export type SubProductVariation =
     totalPrice: number,
     quantity: number,
     discount: number,
+    productVariation: ProductVariation
 }

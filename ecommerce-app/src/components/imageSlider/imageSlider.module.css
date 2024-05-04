@@ -1,0 +1,8 @@
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 5px;
+  border-top: 1px solid var(--borderColor);
+  border-bottom: 1px solid var(--borderColor);
+}

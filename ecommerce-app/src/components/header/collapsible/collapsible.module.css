@@ -1,38 +1,38 @@
 .mainContainer {
-  position: absolute;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  min-height: 50vh;
-  /* max-height: XX; */
-  width: 100%;
-  padding: 0 50px;
-  gap: 50px;
-  background-color: var(--white);
-  z-index: 99;
-}
-
-.pCategoriesContainer,
-.categoriesContainer {
-}
-
-.pCategoriesList,
-.categoriesList {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.pCategoriesItem,
-.categoriesItem {
-}
-
-.pCategoriesItem p,
-.categoriesItem p {
-  cursor: pointer;
-}
-
-.pCategoriesItem p:hover,
-.categoriesItem p:hover {
-  color: var(--grey90);
-}
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: 50vh;
+    /* max-height: XX; */
+    width: 100%;
+    padding: 0 50px;
+    gap: 50px;
+    background-color: var(--white);
+    z-index: 99;
+  }
+  
+  .pCategoriesContainer,
+  .categoriesContainer {
+  }
+  
+  .pCategoriesList,
+  .categoriesList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .pCategoriesItem,
+  .categoriesItem {
+  }
+  
+  .pCategoriesItem p,
+  .categoriesItem p {
+    cursor: pointer;
+  }
+  
+  .pCategoriesItem p:hover,
+  .categoriesItem p:hover {
+    color: var(--grey90);
+  }

@@ -1,0 +1,22 @@
+.mainContainer {
+    display: flex;
+    justify-content: space-around;
+    height: 50px;
+    gap: 5px;
+  }
+  
+  .tabContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-top: 1px solid var(--borderColor);
+  }
+  
+  .leftTabContainer {
+    border-right: 1px solid var(--borderColor);
+  }
+  
+  .rightTabContainer {
+    border-left: 1px solid var(--borderColor);
+  }

@@ -1,10 +1,12 @@
 'use client'
-import { getToken, removeToken, setToken } from "@/functions/storage";
+import { getToken, removeToken, removeUserId, setToken, setUserId } from "@/functions/storage";
 import { User } from "@/types/User";
 import { ReactNode, createContext, useContext, useState } from "react";
 
 
 type AuthContextType = {
+    currentSlot: string,
+    setCurrentSlot: (slot: string) => void,
     fetchSignUpUser: (user: User) => Promise<void>
     fetchLoginUser: (user: User) => Promise<void>
     fetchLogout: () => Promise<void>
@@ -17,6 +19,8 @@ interface AuthProviderProps {
 const baseUrl = 'https://localhost:7041/User'
 
 export const AuthContext = createContext<AuthContextType>({
+    currentSlot: '',
+    setCurrentSlot: () => {},
     fetchSignUpUser: async (user: User) => { },
     fetchLoginUser: async (user: User) => { },
     fetchLogout: async () => { }
@@ -28,6 +32,7 @@ export const useAuth = () => {
 
 export default function AuthProvider({ children }: AuthProviderProps) {
 
+    let [currentSlot, setCurrentSlot] = useState<string>("login")
     const fetchSignUpUser = async (user: User) => {
         try {
             const url = `${baseUrl}/Registration`
@@ -46,15 +51,18 @@ export default function AuthProvider({ children }: AuthProviderProps) {
                 if (responseData) {
                     console.log(responseData);
                     let token = responseData.token
+                    let userId = responseData.userId
                     console.log(token);
 
                     if (token)
                         await setToken(token)
-
+                    if (userId) {
+                        await setUserId(userId)
+                    }
                 }
             }
         }
-        catch (error) {            
+        catch (error) {
             console.log("Error occured: ", error);
             throw error;
         }
@@ -78,10 +86,14 @@ export default function AuthProvider({ children }: AuthProviderProps) {
                 if (responseData) {
                     console.log(responseData);
                     let token = responseData.token
+                    let userId = responseData.userId
                     console.log(token);
 
                     if (token)
                         await setToken(token)
+                    if (userId) {
+                        await setUserId(userId)
+                    }
 
                 }
             }
@@ -94,9 +106,11 @@ export default function AuthProvider({ children }: AuthProviderProps) {
 
     const fetchLogout = async () => {
         await removeToken()
+        await removeUserId()
+
     }
 
-    const contextValue: AuthContextType = { fetchLoginUser, fetchSignUpUser, fetchLogout }
+    const contextValue: AuthContextType = { currentSlot, setCurrentSlot, fetchLoginUser, fetchSignUpUser, fetchLogout }
     return (
         <AuthContext.Provider value={contextValue}>
             {children}

@@ -1,7 +1,10 @@
 'use client'
 
+import Grid from "@/components/grid"
+import GridCard from "@/components/gridCard"
 import { useProductContext } from "@/contexts/ProductContext"
 import { Product } from "@/types/Product"
+import Link from "next/link"
 import { useEffect, useState } from "react"
 
 interface Props {
@@ -25,17 +28,25 @@ export default function ProductsByGender({ params }: Props) {
             }
         }
         fetchData()
-    }, [productContext, params.id])
+    }, [productContext, id])
 
 
     return (
-        <div>
-            {products.length > 0 ? products.map((product) =>
-            (
-                <div key={product.id}>
-                    {product.name}
-                </div>
-            )) : <></>}
-        </div>
+        <Grid>
+        {products.map((product) =>
+          product.productVariations.map((productVariation) => (
+            <div key={productVariation.id}>
+              <GridCard
+                gridItem={{
+                  id: productVariation.id,
+                  name: product.name,
+                  price: productVariation.subProductVariations[0].price,
+                  imageData: productVariation.productImages[0].imageData,
+                }}
+              />
+            </div>
+          ))
+        )}
+      </Grid>
     )
 }

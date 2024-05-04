@@ -1,0 +1,14 @@
+.mainContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 75px);
+}
+
+.authContainer {
+  width: 450px;
+  height: 500px;
+  /* background-color: rgb(190, 190, 190); */
+  border: 1px solid var(--borderColor);
+  border-top: none;
+}

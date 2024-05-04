@@ -1,7 +1,6 @@
-export type User =
-{
-    email: string,
-    password: string,
-    repeat?: string,
-    rememberMe?: boolean
-}
+export type User = {
+  email: string;
+  password: string;
+  confirm?: string;
+  rememberMe?: boolean;
+};

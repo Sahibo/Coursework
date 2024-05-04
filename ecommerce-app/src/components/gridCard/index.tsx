@@ -4,20 +4,34 @@ import styles from "./gridCard.module.css";
 import Image from "next/image";
 import image from "../../images/image.png";
 import { H2, TextMedium, TextSmall } from "../unknown/CustomTexts";
-import { GridCardProps } from "@/types/ComponentsTypes";
-import LikeIcon from "@/icons/LikeIcon";
 
-export default function GridCard({}: GridCardProps) {
+import LikeIcon from "@/icons/LikeIcon";
+import { GridItem } from "@/types/GridItem";
+import Link from "next/link";
+
+interface Props {
+  //children: ReactNode
+  gridItem: GridItem;
+}
+
+export default function GridCard({ gridItem }: Props) {
   return (
     <div className={styles.mainContainer}>
-      <div className={styles.imageContainer}>
-        <Image src={image} alt={`gridCardImg`} width={480} height={240} />
-      </div>
+      <Link href={`/products/${gridItem.id}`}>
+        <div className={styles.imageContainer}>
+          <Image
+            src={`data:image/jpeg;base64,${gridItem.imageData}`}
+            alt={`gridCardImg`}
+            width={480}
+            height={240}
+          />
+        </div>
+      </Link>
 
       <div className={styles.bottomContainer}>
         <div className={styles.infoContainer}>
-          <H2>Name of product</H2>
-          <TextMedium>100$</TextMedium>
+          <H2>{gridItem.name}</H2>
+          <TextMedium>{gridItem.price}</TextMedium>
         </div>
 
         <div className={styles.iconContainer}>

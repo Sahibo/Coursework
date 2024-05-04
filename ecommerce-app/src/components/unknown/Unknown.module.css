@@ -1,0 +1,40 @@
+.button {
+  display: inline-block;
+
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 10s ease;
+}
+
+/* .primaryButton {
+  display: inline-block;
+  width: 100%;
+
+  padding: 10px 20px;
+  background-color: var(--primaryDark);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+} */
+
+.primaryButton:hover {
+  background-color: var(--primaryLight);
+}
+
+.outlinedButton {
+  display: inline-block;
+  padding: 10px 20px;
+  color: var(--primaryDark);
+  border: 2px solid var(--primaryDark);
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.outlinedButton:hover {
+  background-color: var(--primaryDark);
+  color: var(--white);
+}
