@@ -7,6 +7,11 @@
   gap: 40px;
 }
 
+.leftContainer *,
+.rightContainer * {
+  cursor: pointer;
+}
+
 .mainContainer {
   justify-content: space-between;
 }

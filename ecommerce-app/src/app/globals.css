@@ -22,12 +22,8 @@ html::-webkit-scrollbar {
   width: 9px;
 }
 
-html::-webkit-scrollbar-track {
-  background: var(--grey40);
-}
-
 html::-webkit-scrollbar-thumb {
-  background: var(--grey80);
+  background: var(--grey40);
 }
 
 :root {
