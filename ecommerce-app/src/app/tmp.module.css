@@ -1,0 +1,14 @@
+.tmpMain {
+  height: calc(100vh - 75px);
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.tmpSpan {
+  font-size: 100px;
+  text-align: center;
+  justify-content: center;
+  font-weight: bold;
+}

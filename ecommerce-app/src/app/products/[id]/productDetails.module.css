@@ -1,0 +1,9 @@
+.mainContainer {
+  gap: 10px;
+  margin: 5px;
+}
+
+.mainProductContainer {
+  display: flex;
+  gap: 20px;
+}

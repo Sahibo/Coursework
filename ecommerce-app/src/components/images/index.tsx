@@ -1,5 +1,6 @@
 "use client";
 import { ProductImage } from "@/types/Product";
+import "../../app/globals.css";
 import styles from "./images.module.css";
 import { ChildrenProps } from "@/types/ComponentsTypes";
 import Image from "next/image";
@@ -9,6 +10,7 @@ interface Props {
   alt: string;
   productImages: ProductImage[];
 }
+
 export default function Images({ productImages }: Props) {
   const [index, setIndex] = useState<number>(0);
 
@@ -32,8 +34,8 @@ export default function Images({ productImages }: Props) {
             key={productImage.id}
             src={`data:image/jpeg;base64,${productImage.imageData}`}
             alt={`gridCardImg`}
-            width={480}
-            height={240}
+            width={120}
+            height={60}
           />
         ))}
       </div>

@@ -10,6 +10,15 @@ import { Color } from "@/types/Color";
 import { ProductVariation, SubProductVariation } from "@/types/Product";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import styles from "./productDetails.module.css";
+import SizeSelector from "@/components/sizeSelector";
+import {
+  H1,
+  H2,
+  TextSmall,
+  TextMedium,
+} from "@/components/unknown/CustomTexts";
+import { PrimaryButton } from "@/components/unknown/CustomButton";
 
 interface Props {
   params: {
@@ -74,54 +83,50 @@ export default function ProductDetails({ params }: Props) {
   };
 
   return (
-    <div>
+    <div className={styles.mainContainer}>
       {subProductVariations && subProductVariation ? (
-        <div>
-          <h1>{subProductVariation.productVariation.product.name}</h1>
-          <h1>{subProductVariation.price}</h1>
-          <h1>{subProductVariation.productVariation.product.description}</h1>
-
-          <Images
-            alt={subProductVariation.productVariation.product.name}
-            productImages={subProductVariation.productVariation.productImages}
-          />
-
-          <ImageSlider>
-            {productVariations && productVariations.length > 0 ? (
-              <div>
-                {productVariations.map((productVariation) => (
-                  <div key={productVariation.id}>
-                    <SlideItem
-                      slideItem={{
-                        id: productVariation.id,
-                        imageData: productVariation.productImages[0].imageData,
-                      }}
-                    />
-                    {/* <Link href={`/products/${productVariation.id}`}>
-                      <h1>{Color[productVariation.color]}</h1>
-                    </Link> */}
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <></>
-            )}
-          </ImageSlider>
-
-          <div>
-            {subProductVariations.map((subProductVariation) => (
-              <div key={subProductVariation.id}>
-                <button
-                  onClick={() =>
-                    handleChangeSubProductVar(subProductVariation.id)
-                  }
-                >
-                  <h1>{subProductVariation.size}</h1>
-                </button>
-              </div>
-            ))}
+        <div className={styles.mainProductContainer}>
+          <div className={styles.leftContainer}>
+            <Images
+              alt={subProductVariation.productVariation.product.name}
+              productImages={subProductVariation.productVariation.productImages}
+            />
           </div>
-          <button onClick={() => handleAddItem()}>Add to cart</button>
+          <div className={styles.rightContainer}>
+            <H1>{subProductVariation.productVariation.product.name}</H1>
+            <TextMedium>$ {subProductVariation.price}</TextMedium>
+            <TextSmall>
+              {subProductVariation.productVariation.product.description}
+            </TextSmall>
+            <ImageSlider>
+              {productVariations && productVariations.length > 0 ? (
+                <div>
+                  {productVariations.map((productVariation) => (
+                    <div key={productVariation.id}>
+                      <SlideItem
+                        slideItem={{
+                          id: productVariation.id,
+                          imageData:
+                            productVariation.productImages[0].imageData,
+                        }}
+                      />
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <></>
+              )}
+            </ImageSlider>
+
+            <SizeSelector
+              handleChangeSubProductVar={handleChangeSubProductVar}
+              subProductVariation={subProductVariation}
+              subProductVariations={subProductVariations}
+            />
+            <PrimaryButton onClick={() => handleAddItem()}>
+              Add to cart
+            </PrimaryButton>
+          </div>
         </div>
       ) : (
         <></>

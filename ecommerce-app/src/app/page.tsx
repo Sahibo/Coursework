@@ -1,5 +1,5 @@
 "use client";
-import Grid from "@/components/grid";
+import styles from "./tmp.module.css"
 import {
   PrimaryButton,
   SecondaryButton,
@@ -10,10 +10,8 @@ export default function Home() {
     console.log("Button clicked!");
   };
   return (
-    <main>
-      <PrimaryButton onClick={handleClick}>Primary Button</PrimaryButton>
-      <SecondaryButton onClick={handleClick}>Outlined Button</SecondaryButton>
-      <Grid></Grid>
+    <main className={styles.tmpMain}>
+      <span className={styles.tmpSpan}>Ecommerce</span>
     </main>
   );
 }

@@ -1,7 +1,17 @@
 .mainContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  justify-items: center;
-  gap: 10px;
-  margin: 5px;
+  display: flex;
+  height: 100%;
+}
+
+.mainImageContainer {
+  height: 100%;
+  object-fit: cover;
+}
+
+.imagesContainer {
+  display: flex;
+
+  flex-direction: column;
+  overflow-y: auto;
+  height: 100vh;
 }

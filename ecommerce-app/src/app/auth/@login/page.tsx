@@ -18,17 +18,17 @@ export default function Login() {
   let authContext = useAuth();
   const router = useRouter();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      let token = await getToken();
-      console.log(token);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     let token = await getToken();
+  //     console.log(token);
 
-      if (token) {
-        router.push("/home");
-      }
-    };
-    fetchData();
-  }, [authContext]);
+  //     if (token) {
+  //       router.push("/home");
+  //     }
+  //   };
+  //   fetchData();
+  // }, [authContext]);
 
   const handleChangeEmail = (email: string) => {
     setUser((prev) => ({ ...prev, email: email }));

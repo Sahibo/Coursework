@@ -18,11 +18,13 @@ ol {
   cursor: default;
 }
 
-html::-webkit-scrollbar {
-  width: 9px;
+html::-webkit-scrollbar,
+div::-webkit-scrollbar {
+  width: 6px;
 }
 
-html::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar-thumb,
+div::-webkit-scrollbar-thumb {
   background: var(--grey40);
 }
 
@@ -55,3 +57,4 @@ nav,
 footer {
   padding: 20px 40px;
 }
+
