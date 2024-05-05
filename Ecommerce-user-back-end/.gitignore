@@ -1,0 +1,6 @@
+# Ignore directories
+.bin/
+.bin/Debug/net7.0
+obj/
+.vs/
+.idea/
